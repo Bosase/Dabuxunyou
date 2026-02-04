@@ -1,0 +1,82 @@
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+    background-color: #f9f9f9;
+}
+header {
+    background-color: #d32f2f; /* 中国红，契合非遗主题 */
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+nav {
+    background: #444;
+    text-align: center;
+    padding: 10px;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+}
+.subtle {
+    margin: 10px 0 0;
+    color: #555;
+}
+.highlights {
+    margin: 12px 0 0;
+    padding-left: 18px;
+}
+.highlights li {
+    margin: 8px 0;
+}
+.featured-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.photo-grid figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.photo-grid a {
+    display: block;
+}
+.photo-grid img {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    transition: transform 160ms ease;
+}
+.photo-grid figure:hover img {
+    transform: scale(1.02);
+}
+.photo-grid figcaption {
+    padding: 10px 12px 12px;
+    font-size: 0.92rem;
+    color: #555;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #777;
+}
