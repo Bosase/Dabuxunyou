@@ -1,32 +1,114 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Microsoft YaHei', sans-serif;
     line-height: 1.6;
     margin: 0;
     color: #333;
-    background-color: #f9f9f9;
+    background: radial-gradient(circle at top left, #ffe5e5 0, #fff7e6 35%, #f5f5f5 100%);
+    min-height: 100vh;
 }
-header {
-    background-color: #d32f2f; /* 中国红，契合非遗主题 */
+.site-header {
+    background: linear-gradient(135deg, #d32f2f, #ff7043);
     color: white;
     text-align: center;
-    padding: 2rem 0;
+    padding: 2.6rem 0 2.2rem;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.18);
+    position: relative;
+    overflow: hidden;
 }
-nav {
-    background: #444;
+.site-header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 15% 0, rgba(255,255,255,0.25), transparent 55%),
+                radial-gradient(circle at 85% 100%, rgba(255,255,255,0.15), transparent 55%);
+    pointer-events: none;
+}
+.site-header h1 {
+    letter-spacing: 0.08em;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+.site-header p {
+    opacity: 0.92;
+}
+
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(34, 34, 34, 0.92);
     text-align: center;
-    padding: 10px;
+    padding: 10px 16px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
 }
-nav a {
+.site-nav a {
     color: white;
-    margin: 0 15px;
+    margin: 0 18px;
     text-decoration: none;
     font-weight: bold;
+    position: relative;
+    font-size: 0.96rem;
+    padding-bottom: 4px;
+    transition: color 160ms ease;
+}
+.site-nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ffcc80, #ffeb3b);
+    border-radius: 999px;
+    transform: translateX(-50%);
+    transition: width 180ms ease;
+}
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after {
+    width: 70%;
+}
+.site-nav a:hover,
+.site-nav a:focus-visible {
+    color: #ffeb3b;
 }
 main {
     max-width: 900px;
     margin: 20px auto;
     padding: 20px;
-    background: white;
+}
+
+.section-card {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 18px;
+    padding: 24px 22px 26px;
+    margin-bottom: 22px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(4px);
+    animation: fade-up 520ms ease both;
+}
+
+.section-card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-card h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 58%;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ff7043, #ffc107);
 }
 .subtle {
     margin: 10px 0 0;
@@ -74,6 +156,18 @@ main {
     font-size: 0.92rem;
     color: #555;
 }
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 footer {
     text-align: center;
     padding: 20px;
